@@ -10,6 +10,7 @@ module Net #:nodoc:
     def self.start(address, port = nil, p_addr = nil, p_port = nil, p_user = nil, p_pass = nil, &block) #:nodoc:
       https = new(address, port, p_addr, p_port, p_user, p_pass)
       https.use_ssl = true
+      https.ssl_version = :TLSv1_2
       https.start(&block)
     end
   end
